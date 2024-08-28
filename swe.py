@@ -14,9 +14,9 @@ async def init_swe_agent():
     llm = OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
     tools = await composio_toolset.get_tools({
         'actions': [
-            "filetool",
-            "fileedittool",
-            "shelltool"
+            "FILETOOL",
+            "FILEEDITTOOL",
+            "SHELLTOOL"
         ],
         'logging_level': os.getenv('COMPOSIO_LOGGING_LEVEL', 'INFO')
     })
