@@ -126,6 +126,7 @@ files = [
 [package.dependencies]
 aiohappyeyeballs = ">=2.3.0"
 aiosignal = ">=1.1.2"
+async-timeout = {version = ">=4.0,<5.0", markers = "python_version < \"3.11\""}
 attrs = ">=17.3.0"
 frozenlist = ">=1.1.1"
 multidict = ">=4.5,<7.0"
@@ -171,13 +172,26 @@ files = [
 ]
 
 [package.dependencies]
+exceptiongroup = {version = ">=1.0.2", markers = "python_version < \"3.11\""}
 idna = ">=2.8"
 sniffio = ">=1.1"
+typing-extensions = {version = ">=4.1", markers = "python_version < \"3.11\""}
 
 [package.extras]
 doc = ["Sphinx (>=7)", "packaging", "sphinx-autodoc-typehints (>=1.2.0)", "sphinx-rtd-theme"]
 test = ["anyio[trio]", "coverage[toml] (>=7)", "exceptiongroup (>=1.2.0)", "hypothesis (>=4.0)", "psutil (>=5.9)", "pytest (>=7.0)", "pytest-mock (>=3.6.1)", "trustme", "uvloop (>=0.17)"]
 trio = ["trio (>=0.23)"]
+
+[[package]]
+name = "async-timeout"
+version = "4.0.3"
+description = "Timeout context manager for asyncio programs"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "async-timeout-4.0.3.tar.gz", hash = "sha256:4640d96be84d82d02ed59ea2b7105a0f7b33abe8703703cd0ab0bf87c427522f"},
+    {file = "async_timeout-4.0.3-py3-none-any.whl", hash = "sha256:7405140ff1230c310e51dc27b3145b9092d659ce68ff733fb0cefe3ee42be028"},
+]
 
 [[package]]
 name = "attrs"
@@ -497,13 +511,13 @@ files = [
 
 [[package]]
 name = "composio-core"
-version = "0.5.8"
+version = "0.5.9"
 description = "Core package to act as a bridge between composio platform and other services."
 optional = false
 python-versions = "<4,>=3.9"
 files = [
-    {file = "composio_core-0.5.8-py3-none-any.whl", hash = "sha256:af3f75e0706aa4ea6dbf670b910d35a80d216a7a385b5335fccfda8251522565"},
-    {file = "composio_core-0.5.8.tar.gz", hash = "sha256:a0f3e696bbecb3bf20ea27bea40e48d5537985fe50082b0134cce05e3c84a189"},
+    {file = "composio_core-0.5.9-py3-none-any.whl", hash = "sha256:a9f013b3f152fa9e730ad8e71bef07965ac40bbf8ecd6e4b439e1ff1b4a12474"},
+    {file = "composio_core-0.5.9.tar.gz", hash = "sha256:c401a86c72b4dae1d0e3075d52ec3a2b66ef6fdc46d232486e0992d8b4e97602"},
 ]
 
 [package.dependencies]
@@ -524,6 +538,7 @@ pysher = "1.0.8"
 requests = ">=2.31.0,<3"
 requests-toolbelt = "*"
 rich = ">=13.7.1,<14"
+semver = ">=3.0.0"
 sentry-sdk = ">=2.0.0"
 uvicorn = "*"
 
@@ -532,17 +547,17 @@ all = ["diskcache", "flake8", "networkx", "pathspec", "pygments", "ruff", "trans
 
 [[package]]
 name = "composio-openai"
-version = "0.5.8"
+version = "0.5.9"
 description = "Use Composio to get an array of tools with your OpenAI Function Call."
 optional = false
 python-versions = "<4,>=3.9"
 files = [
-    {file = "composio_openai-0.5.8-py3-none-any.whl", hash = "sha256:bf1c3dc2897999227e31a9b0e05a90cf65e2c00aa30364e5b3f3f94ec8028634"},
-    {file = "composio_openai-0.5.8.tar.gz", hash = "sha256:e5f320409919532928fbe06786e7097221d574fc3bf81f2ac0ba20cf96897214"},
+    {file = "composio_openai-0.5.9-py3-none-any.whl", hash = "sha256:8c9a9d19cfe5f76550f62f901f2ed0642e4579248c3559dd407209797d24174b"},
+    {file = "composio_openai-0.5.9.tar.gz", hash = "sha256:6bd2866ce344a606e07319826f7c8c03c259d8dc19d39c615a26721430d466ba"},
 ]
 
 [package.dependencies]
-composio-core = "0.5.8"
+composio-core = "0.5.9"
 openai = "*"
 
 [[package]]
@@ -739,6 +754,20 @@ files = [
 e2b = ">=0.17.1"
 pydantic = "*"
 websocket-client = ">=1.7.0,<2.0.0"
+
+[[package]]
+name = "exceptiongroup"
+version = "1.2.2"
+description = "Backport of PEP 654 (exception groups)"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "exceptiongroup-1.2.2-py3-none-any.whl", hash = "sha256:3111b9d131c238bec2f8f516e123e14ba243563fb135d3fe885990585aa7795b"},
+    {file = "exceptiongroup-1.2.2.tar.gz", hash = "sha256:47c2edf7c6738fafb49fd34290706d1a1a2f4d1c6df275526b62cbb4aa5393cc"},
+]
+
+[package.extras]
+test = ["pytest (>=6)"]
 
 [[package]]
 name = "fastapi"
@@ -1392,6 +1421,7 @@ files = [
 
 [package.dependencies]
 aiohttp = ">=3.8.3,<4.0.0"
+async-timeout = {version = ">=4.0.0,<5.0.0", markers = "python_version < \"3.11\""}
 langchain-core = ">=0.2.35,<0.3.0"
 langchain-text-splitters = ">=0.2.0,<0.3.0"
 langsmith = ">=0.1.17,<0.2.0"
@@ -1829,6 +1859,7 @@ files = [
 
 [package.dependencies]
 numpy = [
+    {version = ">=1.22.4", markers = "python_version < \"3.11\""},
     {version = ">=1.23.2", markers = "python_version == \"3.11\""},
     {version = ">=1.26.0", markers = "python_version >= \"3.12\""},
 ]
@@ -2180,9 +2211,11 @@ files = [
 
 [package.dependencies]
 colorama = {version = "*", markers = "sys_platform == \"win32\""}
+exceptiongroup = {version = ">=1.0.0rc8", markers = "python_version < \"3.11\""}
 iniconfig = "*"
 packaging = "*"
 pluggy = ">=1.5,<2"
+tomli = {version = ">=1", markers = "python_version < \"3.11\""}
 
 [package.extras]
 dev = ["argcomplete", "attrs (>=19.2)", "hypothesis (>=3.56)", "mock", "pygments (>=2.7.2)", "requests", "setuptools", "xmlschema"]
@@ -2505,6 +2538,17 @@ files = [
 nose = "*"
 
 [[package]]
+name = "semver"
+version = "3.0.2"
+description = "Python helper for Semantic Versioning (https://semver.org)"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "semver-3.0.2-py3-none-any.whl", hash = "sha256:b1ea4686fe70b981f85359eda33199d60c53964284e0cfb4977d243e37cf4bf4"},
+    {file = "semver-3.0.2.tar.gz", hash = "sha256:6253adb39c70f6e51afed2fa7152bcd414c411286088fb4b9effb133885ab4cc"},
+]
+
+[[package]]
 name = "sentry-sdk"
 version = "2.13.0"
 description = "Python client for Sentry (https://sentry.io)"
@@ -2710,6 +2754,7 @@ files = [
 
 [package.dependencies]
 anyio = ">=3.4.0,<5"
+typing-extensions = {version = ">=3.10.0", markers = "python_version < \"3.10\""}
 
 [package.extras]
 full = ["httpx (>=0.22.0)", "itsdangerous", "jinja2", "python-multipart (>=0.0.7)", "pyyaml"]
@@ -2738,13 +2783,13 @@ tqdm = "*"
 
 [[package]]
 name = "swekit"
-version = "0.2.8"
+version = "0.2.9"
 description = "Tools for running a SWE agent using Composio platform"
 optional = false
 python-versions = "<4,>=3.9"
 files = [
-    {file = "swekit-0.2.8-py3-none-any.whl", hash = "sha256:d1a6e69331f737f10fce625a08fcf7e5f2db01874c3eb0a028d89cd62f277b92"},
-    {file = "swekit-0.2.8.tar.gz", hash = "sha256:2950c19e7ccf8c1040e4dbdea7c78ca4943ceca1244b6935001486358e155b07"},
+    {file = "swekit-0.2.9-py3-none-any.whl", hash = "sha256:6252f2e42c02bb2b6fdbc6545b23b94eea8ff61ca9114a4a10ae29d02d696aba"},
+    {file = "swekit-0.2.9.tar.gz", hash = "sha256:baca03c24bed0233e3bdb7b779e1a3e3c75f225de2a1fb263d49373e86c37cfd"},
 ]
 
 [package.dependencies]
@@ -2771,6 +2816,17 @@ files = [
 [package.extras]
 doc = ["reno", "sphinx"]
 test = ["pytest", "tornado (>=4.5)", "typeguard"]
+
+[[package]]
+name = "tomli"
+version = "2.0.1"
+description = "A lil' TOML parser"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "tomli-2.0.1-py3-none-any.whl", hash = "sha256:939de3e7a6161af0c887ef91b7d41a53e7c5a1ca976325f429cb46ea9bc30ecc"},
+    {file = "tomli-2.0.1.tar.gz", hash = "sha256:de526c12914f0c550d15924c62d72abc48d6fe7364aa87328337a31007fe8a4f"},
+]
 
 [[package]]
 name = "tqdm"
@@ -2856,6 +2912,7 @@ files = [
 [package.dependencies]
 click = ">=7.0"
 h11 = ">=0.8"
+typing-extensions = {version = ">=4.0", markers = "python_version < \"3.11\""}
 
 [package.extras]
 standard = ["colorama (>=0.4)", "httptools (>=0.5.0)", "python-dotenv (>=0.13)", "pyyaml (>=5.1)", "uvloop (>=0.14.0,!=0.15.0,!=0.15.1)", "watchfiles (>=0.13)", "websockets (>=10.4)"]
@@ -3227,5 +3284,5 @@ type = ["pytest-mypy"]
 
 [metadata]
 lock-version = "2.0"
-python-versions = "^3.11"
-content-hash = "3de4f4dfd4056255488d44f51661e3fa86ce129bd4ad98ddd3dd2eed9a68045e"
+python-versions = ">=3.9,<4"
+content-hash = "f15b68c738e8a3f3cdf789e04e19467c7e59cbfbbfde9ba67832ca7231ffedf9"

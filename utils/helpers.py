@@ -1,6 +1,5 @@
 import os
 import sys
-import readline
 import json
 from pathlib import Path
 from nanoid import generate
@@ -53,8 +52,7 @@ def from_github(toolset):
         'GitHub issue',
         create_github_issue_validator(owner, name, toolset)
     )
-    return {'repo': repo, 'issue': issue}
-
+    return repo, issue  # Return as separate values, not a dictionary
 
 def get_branch_name_from_issue(issue: str) -> str:
     return "swe/" + issue.lower().replace(" ", "-") + "-" + generate()

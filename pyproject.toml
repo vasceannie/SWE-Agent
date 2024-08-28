@@ -6,7 +6,7 @@ authors = ["Trav <travis.vas@gmail.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.11"
+python = ">=3.9,<4"
 swekit = "^0.2.8"
 langchain = "^0.2.15"
 Scaffold = "^0.1.3"
